@@ -1,0 +1,46 @@
+
+<div class="field"><%= link_to 'Edit', edit_task_path(@task), :remote => true %> </div>
+<div id="form">
+	<p>
+	  <b>Due date:</b>
+	  <%= @task.due_date.strftime("%d/%m/%y") %>
+	</p>
+
+	<p>
+	  <b>Priority:</b>
+	  <%= @task.priority %>
+	</p>
+
+	<p>
+	  <b>Patron:</b>
+	  <%= find_patron %>
+	</p>
+	<p>
+	  <b>Subject:</b>
+	  <%= @task.subject %>
+	</p>
+
+	<p>
+	  <b>Description:</b>
+	  <%= @task.description %>
+	</p>
+
+	<p>
+	  <b>Completed:</b>
+	  <% if @task.completed %>
+		Yes
+	  <% else %>
+		No
+	  <% end %>
+	</p>
+	  <% if current_user.admin? %>
+		<p>
+		  <b>Assign to:</b>
+		  <%= @task.assign_to %>
+		</p>
+	  <% end %>
+</div>
+<div class="right">
+<%= link_to "Previous", task_path, :remote => true %> | <%= link_to "Next", task_path, :remote => true %>
+</div>
+

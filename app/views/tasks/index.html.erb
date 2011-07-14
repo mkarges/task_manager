@@ -1,0 +1,34 @@
+<div class="left">
+	<% if current_user.admin? %>
+		<%= link_to "My Tasks", tasks_path %> | <%= link_to "Everyone's Tasks", :controller => 'admin', :action => 'index'  %>
+	<% else %>
+		<%= link_to "My Tasks", tasks_path %>
+	<% end %>
+</div>
+
+	<div class="right"><%= link_to 'New Task', new_task_path, :remote => true %> | 
+					   <%= link_to "View Completed", :value => "1" %>
+	<br /><br />
+	</div>
+	<table class="tableWidth">
+	  <tr>
+		<th>Done</th>
+	    <th><%= sortable "due_date" %></th>
+	    <th><%= sortable "subject" %></th>
+		<% if current_user.admin? %>
+	    	<th><%= sortable "assign_to", "Assigned To" %></th>
+		<% end %>
+	    <th><%= sortable "priority" %></th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+		<% if @tasks.nil? %>
+			<%= render :partial => 'due_next' %>
+		<% else %>
+			<br /><br />
+			<%= render :partial => 'filtered' %>
+		<% end %>
+	</table>		
+</div>
+

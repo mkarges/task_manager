@@ -1,0 +1,34 @@
+<div class="left">
+<% @today.each do |task| %>
+	  <tr class="row">
+		<td class="submittable"><%= check_box_tag 'completed', :class => 'submittable' %></td>
+	    <td><%= englishify(task.due_date) %></td>
+	    <td><%= task.subject %></td>
+		<% if current_user.admin? %>	
+	    	<td><%= task.assign_to %></td>
+	    <% end %>
+	    <td><%= task.priority %></td>
+	    <td><%= link_to 'Show', task, :remote => true %></td>
+	    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+<% end %>
+</table><br />
+
+<table class="tableWidth">
+
+<tr><h3>Next</h3></tr>
+<% @next.each do |t| %>
+	  <tr class="row">
+		<td class="submittable"><%= check_box_tag 'completed', :class => 'submittable' %></td>
+	    <td><%= englishify(t.due_date) %></td>
+	    <td><%= t.subject %></td>
+		<% if current_user.admin? %>
+	    	<td><%= t.assign_to %></td>
+		<% end %>
+		<td><%= t.priority %></td>
+	    <td><%= link_to 'Show', t, :remote => true %></td>
+	    <td><%= link_to 'Destroy', t, :confirm => 'Are you sure?', :method => :delete %></td>
+	     </tr>			
+<% end %>
+<%= paginate @next %>
+

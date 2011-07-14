@@ -1,0 +1,63 @@
+<%= form_for @task, do |f| %>
+  <% if @task.errors.any? %>
+    <div class="field">
+      <% @task.errors.full_messages.each do |msg| %>
+      <em><%= msg %></em>
+      <% end %>
+    </div>
+  <% end %>
+
+	  <div class="field">
+	    <%= f.label :completed %>
+	    <%= f.check_box :completed %>
+	  </div>
+	
+	<div id="form">
+	  <div class="left">
+		<div class="valiDate">		
+		    <%= f.label :due_date %><br />
+		    <%= f.date_select :due_date %><br /><br />
+		</div>
+	
+	    <%= f.label :type %><br />
+	    <%= f.select :type, options_for_select(["Email", "Phone", "Post", "Meeting", "Other"]) %><br /><br />
+	  </div>
+	 
+	  <div class="right">
+		<table>	
+		<tr><td class="mid"><%= f.label :priority %>&nbsp;&nbsp;&nbsp;</td>
+		<% ['High', 'Medium', 'Low'].each do |option| %>
+		  <td class="mid"><%= f.radio_button :priority, option %><br />
+		  <%= f.label option %></td>
+		<% end %>
+		</tr>
+		</table><br />
+		Patron<br />
+	    <%= f.collection_select :patron_id, Patron.find(:all), :id, :last_name, :prompt => "None" %>
+	
+	  </div>
+	
+	  <div class="subject">
+	    <%= f.label :subject %><br />
+	    <%= f.text_field :subject, :size => 70 %><br /><br />
+	  </div>
+	  <div class="">
+	    <%= f.label :description %><br />
+	    <%= f.text_area :description, :rows => 5, :cols => 55 %><br /><br />
+	  </div>
+	  <% if current_user.admin? %>
+		  <div class="field">
+	  <% else %>
+		  <div class="hide">
+	  <% end %>
+			
+		    Assign to (defaults to current user)<br />
+		    <%= f.select :assign_to, options_for_select( @select_users.map { |e| [e.email] }, current_user.email ) %>
+		
+		<br /><br />
+		  </div>
+		  <div class="right">
+		    <%= f.submit "Save" %>&nbsp;<%= f.submit "Save and New" %>
+		  </div>
+	</div>
+<% end %>

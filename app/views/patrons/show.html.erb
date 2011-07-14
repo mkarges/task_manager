@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @patron.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @patron.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @patron.email %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @patron.street %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @patron.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @patron.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @patron.zip %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @patron.phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_patron_path(@patron) %> |
+<%= link_to 'Back', patrons_path %>

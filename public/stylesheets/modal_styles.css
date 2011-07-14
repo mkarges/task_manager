@@ -1,0 +1,72 @@
+#modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+#modal {
+  display: none;
+  position: absolute;
+  width: 550px;
+  left: 50%;
+  margin-left: -275px;
+  padding: 20px;
+  background: #fff;
+  border: 5px solid #eee;
+
+}
+
+
+#home {
+ 	text-align: left;
+	width: 800px;
+}
+
+.tableWidth	{
+	width: 800px;
+}
+
+th	{
+	text-align: center;
+}
+
+h3	{
+	text-decoration: underline;
+}
+
+#form	{
+	margin-top: 50px;
+	padding-bottom: 20px;
+}
+
+.center	{
+	text-align: center;
+}
+
+.close	{
+	float: right;
+}
+
+.subject {
+	clear: both;
+	text-align: left;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.mid {
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Activity</title>
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css", "scaffold", "modal_styles" %>
+  <%= javascript_include_tag "jquery", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.js", "application", "rails" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	<div id="home">
+	<% if user_signed_in? %>
+		<div class="right">You are logged in as <em><%= current_user.email %></em> |  
+		<%= link_to('Logout', destroy_user_session_path, :method => 'delete') %></div><br /><br />
+	<% end %>
+	
+
+
+<%= yield %>
+
+
+
+<div id="modal-container"></div>
+<div id="modal">
+
+  <div id="top"><a href="#" class="close">close</a>
+	<h2><%= @header %></h2>
+  </div>
+</div>
+
+
+</body>
+</html>

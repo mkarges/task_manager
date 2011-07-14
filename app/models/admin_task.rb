@@ -1,0 +1,3 @@
+class AdminTask < Task
+  
+end
