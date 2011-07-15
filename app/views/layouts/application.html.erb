@@ -9,6 +9,9 @@
 <body>
 	<div id="home">
 	<% if user_signed_in? %>
+		<div class="left">
+			<%= link_to "Home", root_path %>
+		</div>
 		<div class="right">You are logged in as <em><%= current_user.email %></em>
 			<% if current_user.admin? %>
 			 	[master user] 
