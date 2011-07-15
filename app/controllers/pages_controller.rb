@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @tasks = Task.where("completed = ?", false).order(sort_column + " " + sort_direction).limit(5)
+    @tasks = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).order(sort_column + " " + sort_direction).limit(5)
   end
   
   private
