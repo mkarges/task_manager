@@ -3,10 +3,11 @@
 		<td class="submittable"><%= check_box_tag 'completed', :class => 'submittable' %></td>
 	    <td><%= englishify(task.due_date) %></td>
 	    <td><%= task.subject %></td>
-	    <td><%= task.assign_to %></td>
-	    <td><%= task.priority %></td>
+		<% if current_user.admin? %>
+	    	<td><%= personalize(task.assign_to) %></td>
+		<% end %>
+	    <td><%= color_code(task.priority) %></td>
 	    <td><%= link_to 'Show', task, :remote => true %></td>
-	    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
+	    <td><%= link_to 'Delete', task, :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
 <% end %>
-<%= paginate @tasks %>

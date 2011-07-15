@@ -6,27 +6,23 @@
 	<% end %>
 </div>
 
-	<div class="right"><%= link_to 'New Task', new_task_path, :remote => true %> | 
-					   <%= link_to "View Completed", :value => "1" %>
-	<br /><br />
-	</div>
+	<div class="right"><%= link_to image_tag('add_sm.jpg', :border => 0), new_task_path, :remote => true %>&nbsp;<span class="add">Add &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to image_tag('check.jpg', :border => 0), new_task_path, :value => "1" %>&nbsp;View Completed</span></div>
+	<br /><br /><br />
 	<table class="tableWidth">
 	  <tr>
-		<th>Done</th>
-	    <th><%= sortable "due_date" %></th>
-	    <th><%= sortable "subject" %></th>
+		<th width="5%">Done</th>
+	    <th width="20%"><%= sortable "due_date", "Due Date" %></th>
+	    <th width="30%"><%= sortable "subject" %></th>
 		<% if current_user.admin? %>
-	    	<th><%= sortable "assign_to", "Assigned To" %></th>
+	    	<th width="20%"><%= sortable "assigned_to", "Assigned To" %></th>
 		<% end %>
-	    <th><%= sortable "priority" %></th>
-	    <th></th>
-	    <th></th>
-	    <th></th>
+	    <th width="8%"><%= sortable "priority" %></th>
+	    <th width="7%"></th>
+	    <th width="7%"></th>
 	  </tr>
 		<% if @tasks.nil? %>
 			<%= render :partial => 'due_next' %>
 		<% else %>
-			<br /><br />
 			<%= render :partial => 'filtered' %>
 		<% end %>
 	</table>		

@@ -5,30 +5,56 @@
 	    <td><%= englishify(task.due_date) %></td>
 	    <td><%= task.subject %></td>
 		<% if current_user.admin? %>	
-	    	<td><%= task.assign_to %></td>
+	    	<td><%= personalize(task.assign_to) %></td>
 	    <% end %>
-	    <td><%= task.priority %></td>
+	    <td><%= color_code(task.priority) %></td>
 	    <td><%= link_to 'Show', task, :remote => true %></td>
-	    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
+	    <td><%= link_to 'Delete', task, :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
 <% end %>
 </table><br />
 
-<table class="tableWidth">
 
 <tr><h3>Next</h3></tr>
+<table class="tableWidth">
+
+
+<% if !current_user.admin? %>
+  <tr>
+	<th width="5%">Done</th>
+    <th width="13%"><%= sortable "due_date", "Due Date" %></th>
+    <th width="35%"><%= sortable "subject" %></th>
+	<% if current_user.admin? %>
+    	<th width="20%"><%= sortable "assigned_to", "Assigned To" %></th>
+	<% end %>
+    <th width="10%"><%= sortable "priority" %></th>
+    <th width="5%"></th>
+    <th width="5%"></th>
+  </tr>
+<% else %>
+  <tr>
+	<th width="5%">Done</th>
+    <th width="20%"><%= sortable "due_date", "Due Date" %></th>
+    <th width="30%"><%= sortable "subject" %></th>
+	<% if current_user.admin? %>
+    	<th width="20%"><%= sortable "assigned_to", "Assigned To" %></th>
+	<% end %>
+    <th width="10%"><%= sortable "priority" %></th>
+    <th width="7%"></th>
+    <th width="7%"></th>
+  </tr>	
+<% end %>
 <% @next.each do |t| %>
 	  <tr class="row">
 		<td class="submittable"><%= check_box_tag 'completed', :class => 'submittable' %></td>
 	    <td><%= englishify(t.due_date) %></td>
 	    <td><%= t.subject %></td>
 		<% if current_user.admin? %>
-	    	<td><%= t.assign_to %></td>
+	    	<td><%= personalize(t.assign_to) %></td>
 		<% end %>
-		<td><%= t.priority %></td>
+		<td><%= color_code(t.priority) %></td>
 	    <td><%= link_to 'Show', t, :remote => true %></td>
-	    <td><%= link_to 'Destroy', t, :confirm => 'Are you sure?', :method => :delete %></td>
+	    <td><%= link_to 'Delete', t, :confirm => 'Are you sure?', :method => :delete %></td>
 	     </tr>			
 <% end %>
-<%= paginate @next %>
 

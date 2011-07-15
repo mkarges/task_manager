@@ -37,6 +37,26 @@ module ApplicationHelper
        date.strftime("%m/%d/%y")
      end
    end
+   
+   def color_code(priority)
+     if priority == "Low"
+       image_tag('green.jpg')
+     elsif priority == "Medium"
+       image_tag('green.jpg') + image_tag('yellow.jpg')
+     else
+       image_tag('green.jpg') + image_tag('yellow.jpg') + image_tag('red.jpg')
+    end
+        
+   end
+   
+   def personalize(email)
+     if email == current_user.email
+       "Me"
+     else
+       val = email.match(/.+/)
+       val
+     end
+   end
 
 
 end

@@ -4,10 +4,10 @@ class TasksController < ApplicationController
   
   def index
     if !Task.column_names.include?(params[:filter])    
-      @today = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date <= ?", Date.today).order("due_date asc").page params[:page]
-      @next  = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date > ?", Date.today).order("due_date desc").page params[:page]
+      @today = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date <= ?", Date.today).order("due_date asc")
+      @next  = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date > ?", Date.today).order("due_date desc")
     else
-      @tasks = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).order(sort_column + " " + sort_direction).page params[:page]
+      @tasks = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).order(sort_column + " " + sort_direction)
     end
 
     respond_to do |format|

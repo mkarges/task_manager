@@ -5,7 +5,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,.6);
 }
 
 #modal {
@@ -20,18 +20,44 @@
 
 }
 
+.add	{
+	font-size: 12px;
+	line-height: 18px;
+	vertical-align: top;
+}
+
+#center	{
+	position: absolute;
+	width: 700px;
+	left: 50%;
+	margin-left: -350px;
+	top: 100px;
+
+}
+
 
 #home {
- 	text-align: left;
-	width: 800px;
+	position: absolute;
+	width: 700px;
+	left: 50%;
+	margin-left: -350px;
 }
 
 .tableWidth	{
-	width: 800px;
+	table-layout: fixed;
+	width: 700px;
 }
 
 th	{
-	text-align: center;
+	padding-left: 10px;
+	text-align: left;
+}
+
+td {
+	white-space:nowrap;
+	overflow: hidden;
+	text-align: left;
+	
 }
 
 h3	{

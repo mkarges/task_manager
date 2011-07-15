@@ -1,9 +1,9 @@
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+  font-family: Arial, sans-serif;
+  font-size:   12px;
+  line-height: 13px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -32,6 +32,11 @@ div.hide	{
 
 #notice {
   color: green;
+}
+
+img a:hover	{
+	text-decoration: none;
+	background-color: #fff;
 }
 
 #error_explanation {

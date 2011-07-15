@@ -3,10 +3,10 @@ class AdminController < ApplicationController
 
   def index
     if !Task.column_names.include?(params[:filter])    
-      @today = Task.where("completed = ?", false).where("due_date <= ?", Date.today).order("due_date asc").limit(10).page params[:page]
-      @next = Task.where("completed = ?", false).where("due_date > ?", Date.today).order("due_date desc").page params[:page]
+      @today = Task.where("completed = ?", false).where("due_date <= ?", Date.today).order("due_date asc")
+      @next = Task.where("completed = ?", false).where("due_date > ?", Date.today).order("due_date desc")
     else
-      @tasks = Task.where("completed = ?", false).order(sort_column + " " + sort_direction).limit(10).page params[:page]
+      @tasks = Task.where("completed = ?", false).order(sort_column + " " + sort_direction)
     end
 
     respond_to do |format|

@@ -9,15 +9,19 @@
 <body>
 	<div id="home">
 	<% if user_signed_in? %>
-		<div class="right">You are logged in as <em><%= current_user.email %></em> |  
+		<div class="right">You are logged in as <em><%= current_user.email %></em>
+			<% if current_user.admin? %>
+			 	[master user] 
+			<% end %> |
 		<%= link_to('Logout', destroy_user_session_path, :method => 'delete') %></div><br /><br />
 	<% end %>
+	</div>
 	
-
+<div id="center">
 
 <%= yield %>
 
-
+</div>
 
 <div id="modal-container"></div>
 <div id="modal">
