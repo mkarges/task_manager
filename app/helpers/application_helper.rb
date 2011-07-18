@@ -17,7 +17,7 @@ module ApplicationHelper
    def englishify(date)
      if date == Date.today
        "Today"
-     elsif date == Date.yesterday
+     elsif date == Date.today - 1
        "Yesterday"
      elsif date == Date.today - 2
        "2 Days Ago"
@@ -39,14 +39,14 @@ module ApplicationHelper
    end
    
    def color_code(priority)
-     if priority == "Low"
-       image_tag('green.jpg')
-     elsif priority == "Medium"
-       image_tag('green.jpg') + image_tag('yellow.jpg')
-     else
-       image_tag('green.jpg') + image_tag('yellow.jpg') + image_tag('red.jpg')
-    end
-        
+     if priority == 2
+       image_tag('1.jpg')
+     elsif priority == 1    
+       image_tag('2.jpg') 
+     else                   
+       image_tag('3.jpg') 
+    end                              
+                                     
    end
    
    def personalize(email)

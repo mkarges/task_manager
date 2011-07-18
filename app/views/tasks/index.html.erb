@@ -11,7 +11,7 @@
 		<% if !current_user.admin? %>
 		  <tr>
 			<th width="5%">Done</th>
-		    <th width="13%"><%= sortable "due_date", "Due Date" %></th>
+		    <th width="13%"><%= sortable "due_date", "Due Date" %></th>	
 		    <th width="35%"><%= sortable "subject" %></th>
 			<% if current_user.admin? %>
 		    	<th width="20%"><%= sortable "assigned_to", "Assigned To" %></th>
