@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new(:priority => 'Medium')
+    @task = Task.new(:priority => 1)
     @header = "New Task"
   end
 

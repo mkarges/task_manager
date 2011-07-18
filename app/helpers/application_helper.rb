@@ -49,6 +49,16 @@ module ApplicationHelper
                                      
    end
    
+   def priority_level(priority)
+     if priority == 0
+       "High"
+     elsif priority == 1
+       "Medium"
+     else
+       "Low"
+     end
+   end
+   
    def personalize(email)
      if email == current_user.email
        "Me"
