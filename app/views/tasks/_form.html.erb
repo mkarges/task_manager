@@ -57,7 +57,7 @@
 		<br /><br />
 		  </div>
 		  <div class="right">
-		    <%= link_to "Delete", @task, :confirm => "Are you sure?", :method => :delete %>&nbsp;&nbsp; 
+		    <span class="red"><%= link_to "Delete", @task, :confirm => "Are you sure?", :method => :delete, :class => "red" %></span>&nbsp;&nbsp; 
 			<%= f.submit "Save" %>&nbsp;
 			<%= f.submit "Save and New" %>
 		  </div>

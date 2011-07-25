@@ -29,18 +29,15 @@
 		<link rel="stylesheet" type="text/css" media="all" href="../operatePatron_files/jquery-ui-1.css">
 		
 		<!-- <script language="javascript"></script> Workaround comment for Norton Firewall -->
-		<script src="operatePatron_files/ga.js" async="" type="text/javascript"></script><script language="JavaScript" src="operatePatron_files/jquery-1.js"></script>
-		<script language="JavaScript" src="../operatePatron_files/jquery-ui-1.js"></script>
-		<script language="JavaScript" src="../operatePatron_files/jquery_002.js"></script>
-		<script language="JavaScript" src="../operatePatron_files/jquery.js"></script>
 
-		<script language="JavaScript" src="../operatePatron_files/global.js"></script>
-		<script language="JavaScript" src="../operatePatron_files/admin.js"></script>
+		
 		
 		<link rel="icon" href="https://admin.ovationtix.com/trs/images/favicon.ico">
 	    
 	    
 	    <script type="text/javascript">
+	
+
 		    // BEGIN Google Analytics
 		
 		    // initialize google asynchronous tracker
@@ -979,7 +976,7 @@ $(document).ready(function(){
 
 
 
-<link rel="stylesheet" type="text/css" media="all" href="operatePatron_files/tabs.css">
+<link rel="stylesheet" type="text/css" media="all" href="../operatePatron_files/tabs.css">
 
 
 
@@ -1590,12 +1587,12 @@ alertIfCookieDiabled();
 //-->
 </script>
 
-<script type="text/javascript" src="operatePatron_files/tabs.js"></script>
+<script type="text/javascript" src="../operatePatron_files/tabs.js"></script>
 
-<link rel="stylesheet" type="text/css" media="all" href="operatePatron_files/jquery-ui-1.css">
+<link rel="stylesheet" type="text/css" media="all" href="../operatePatron_files/jquery-ui-1.css">
 
-<script language="JavaScript" src="operatePatron_files/jquery-ui-1.js"></script>
-<script language="JavaScript" src="operatePatron_files/jquery_003.js"></script>
+<script language="JavaScript" src="../operatePatron_files/jquery-ui-1.js"></script>
+<script language="JavaScript" src="../operatePatron_files/jquery_003.js"></script>
 
 <table id="categoryDialog" cellspace="0" class="dialogWindow">
 
@@ -1921,7 +1918,7 @@ td.subSubHead a.disabledLink:hover, a.disabledLink:hover{
 					<tbody><tr>
 						<td colspan="4">
 
-						<img src="operatePatron_files/patron_placeholder.gif" style="width: 50px; height: 50px;">
+						<img src="../operatePatron_files/patron_placeholder.gif" style="width: 50px; height: 50px;">
 						Upload A Patron Image <i class="tinytype">(Image must be in .gif or .jpg formats and less than 20kb.)</i><br>
 						<input name="photo" value="" id="photo" type="file"> </td>
 					</tr>
@@ -7707,6 +7704,27 @@ td.subSubHead a.disabledLink:hover, a.disabledLink:hover{
 		
 	</td>
 	<td id="orderdetails" colspan="2" valign="top">
+		
+		
+			<table border="0" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td class="subSubHead" colspan="3">Tasks
+				</tr>				
+			</table>
+			
+			<% if @tasks.empty? %>
+				<em>&nbsp;No current tasks for this patron</em><br /><br />
+			<% else %>
+				<%= render :partial => 'shared/patron' %>
+			<% end %>
+		
+		
+		
+		
+		
+		
+		
+		
 		<table border="0" cellpadding="2" cellspacing="0" width="100%">
 			<tbody><tr>
 				<td class="subSubHead" colspan="3">Ticket Package(s): 0 ticket(s) available in 1 package(s)</td>

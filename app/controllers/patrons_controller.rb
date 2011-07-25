@@ -1,4 +1,6 @@
 class PatronsController < ApplicationController
+  helper_method :sort_column, :sort_direction
+  
   # GET /patrons
   # GET /patrons.xml
   def index
@@ -11,7 +13,13 @@ class PatronsController < ApplicationController
   # GET /patrons/1.xml
   def show
     @patron = Patron.find(params[:id])
-    render :layout => false
+    if !current_user.admin?
+      @tasks = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("patron_id = ?", @patron.id).order(sort_column + " " + sort_direction)
+    else
+      @tasks = Task.where("completed = ?", false).where("patron_id = ?", @patron.id).order(sort_column + " " + sort_direction)
+    end
+    
+    render :layout => 'patron_layout'
 
   end
 
@@ -73,5 +81,15 @@ class PatronsController < ApplicationController
       format.html { redirect_to(patrons_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  
+  def sort_column
+    Task.column_names.include?(params[:filter]) ? params[:filter] : "due_date"
+  end
+  
+  def sort_direction
+    %w[ asc desc ].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

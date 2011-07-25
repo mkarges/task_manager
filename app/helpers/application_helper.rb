@@ -48,11 +48,11 @@ module ApplicationHelper
    
    def color_code(priority)
      if priority == 2
-       image_tag('1.jpg')
+       image_tag('green.jpg')
      elsif priority == 1    
-       image_tag('2.jpg') 
+       image_tag('yellow.jpg') 
      else                   
-       image_tag('3.jpg') 
+       image_tag('red.jpg') 
     end                              
                                      
    end

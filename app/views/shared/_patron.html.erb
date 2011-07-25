@@ -1,0 +1,18 @@
+<table width="100%">
+<tr align="middle">
+   <td width="5%">Done</th>
+   <td width="3%"><%= sortable "priority", "" %></th>
+   <td width="20%"><%= sortable "due_date", "Due Date" %></th>
+   <td width="40%"><%= sortable "subject" %></th>
+</tr>
+
+<% @tasks.each do |task| %>
+<tr class="row" align="middle">
+  <td class="submittable"><%= check_box_tag 'completed', :class => 'submittable' %></td>
+  <td><%= color_code(task.priority) %></td>
+
+  <td><%= englishify(task.due_date) %></td>
+  <td align="left"><span class="show"><%= link_to (task.subject), task %></span></td>
+</tr>
+<% end %>
+</table>

@@ -104,3 +104,8 @@ h3	{
 	padding-right: 10px;
 }
 
+.red a	{
+	color: red;
+	text-decoration: none;
+}
+
