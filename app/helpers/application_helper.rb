@@ -1,6 +1,14 @@
 module ApplicationHelper
 
-   def find_patron
+   def find_patron(patron_id)
+     if @patron = Patron.find_by_id(patron_id)
+       @patron.last_name
+     else
+       "None"
+     end
+   end
+   
+   def get_patron
      if a = Patron.find_by_id(@task.patron_id)
        a.last_name
      else

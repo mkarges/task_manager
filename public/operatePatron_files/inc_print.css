@@ -1,0 +1,123 @@
+.noprint, .printLink, .userHeaderContainer {
+	display:none;
+	}
+	
+.pageFrame {
+	background-image:none;
+	padding:0px;
+	border:1px solid black;
+	}
+
+.row0 td, .row1 td {
+	background-color:white;
+	border-left:1px dotted black;
+	border-right:1px dotted black;
+	border-bottom:1px solid black;
+	}
+	
+a {
+	color:black;
+	border:0;
+	}		
+	
+body {
+	color:black;
+	background-image:none;
+	background-color:white;
+	}
+	
+TD.subHead, th.subHead {
+	color:white;
+	white-space:normal;
+	border:0px;
+	border-right:1px solid white;
+}	
+
+table.topHeader {
+	background-image:none;
+	background-color:white;
+	}
+
+.submit {
+	visibility:hidden;
+	}
+	
+.sideFrame {
+	display:none;
+	}
+	
+.whosComingNotes {
+	display:table;
+	}
+	
+#whosComingNav {
+	display:none;
+	}	
+	
+TR.subHead TD, td.subHead, th.subHead, .list th.subHead {
+	white-space:normal;
+	background-color:#eee;
+	color:black;
+	border:0;
+	}	
+
+TD.printBlack,TR.printBlack TD{
+	white-space:normal;
+	background-color:#eee;
+	color:black;
+}	
+.whosComingNotes {
+	display:none;
+	}
+
+.whosComingNotes .note {
+	border-bottom:1px solid black;
+	}
+	
+.whosComing .smalltype {
+	color:black;
+	}	
+	
+tr.whosComingVoid td {
+	background-color:white;
+	color:#999;
+	border-right:#333;
+	}	
+	
+th {
+	background-image:none;
+	background-color:black;
+	}		
+	
+.smalltype, .tinytype {
+	color:black;
+	}	
+	
+.tinytype {
+	font-size:6pt;
+	}	
+	
+.eTicket {
+	background-color:white;
+	color:black;
+	margin-bottom: 1em;
+	padding:12pt;
+	width: 98%;
+	border: 0;
+	padding: 0;
+	float: none !important;
+}
+		
+.description {
+	background-color:white;
+	background-image:none;
+	}
+	
+.description a {
+	color:black;
+	}	
+	
+.divider {
+	color:#666;
+	border-bottom:1px solid #666;
+	}	

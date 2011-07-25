@@ -1,0 +1,5 @@
+.checkBoxList {
+	max-height:16em;
+	overflow:auto;
+	border:1px solid #eee;
+}

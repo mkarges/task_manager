@@ -1,0 +1,246 @@
+.topHeader {
+    text-align:left; 
+    float: left;
+    color:white;
+	}
+	
+.footer {
+	FONT-SIZE: 80%;
+	COLOR: white;  
+	BACKGROUND-COLOR: #014691; 
+	TEXT-ALIGN: center;
+}
+
+.footer .tinytype {
+	color:#5282B3;
+}		
+
+.testMode {
+	background-color:#ff9;
+	color:#333;
+	border:0px;
+	font-size:8pt;
+	padding:1px;
+	padding-left:3px;
+	font-weight:normal;
+	}	
+
+.testMode b {
+	color:#f30;
+	}
+
+.testMode a {
+	color:#36f;
+	font-weight:normal;
+	}
+	
+.helpLink {
+    text-align:right;
+    display:inline;
+    color:white;
+    font-size:7pt;
+    padding-right:2pt;
+    }   
+.helpLink a:hover {
+    color:#ff9;
+}
+.helpLink a {
+    font-size:8pt;
+    color:white;
+    border:none;
+    }
+	
+.appLogo {
+	float:left;
+	}	
+
+a.home {
+	background-color:#66C500;
+	border:0;
+	color:white;
+	font-size:8pt;
+	padding:0;
+	padding-left:2pt;
+	padding-right:2pt;
+	font-weight:normal;
+	float:left;
+	}
+	
+.helpLink b {
+	font-size:8pt;
+	}
+	
+.userHeader {
+    background-color:#014691;
+    background-position:center;
+    text-align:right;
+    padding:1pt;
+    padding-right:4pt;
+    font-size:8pt;
+}
+
+.userHeader a {
+    border:none;
+    color:white;
+	}
+
+.userHeader a:hover {
+	color:red;
+	}	
+
+.menu {
+	BACKGROUND-COLOR: #f0f0d0;
+	display:block;
+	border-left: 1px solid #03c;
+	border-right: 1px solid #03c;
+	overflow:hidden;
+	}	
+
+
+.row {
+	clear:both;
+	BORDER-top: #ffffe9 1px solid;
+	BORDER-bottom: #d3d3b7 1px solid;
+	height:18pt;
+	}
+
+
+.menu a {
+	font-size:8pt;
+	BACKGROUND-COLOR: #f0f0d0;
+	BORDER-RIGHT: #d3d3b7 1px solid; 
+	BORDER-LEFT: #ffffe9 1px solid; 	
+	BORDER-bottom: #d3d3b7 1px solid;
+	BORDER-top: #ffffe9 1px solid;
+	white-space: nowrap;
+	font-weight:normal;
+	text-align:center;
+	padding-left:3pt;
+	padding-right:3pt;
+	line-height:17pt;
+	display:block;
+	float:left;
+	}
+
+.links {
+	float:right;
+	}
+
+.row a:hover {
+	BORDER-left: #abab63 1px solid; 
+	BORDER-right: #F6F6E5 1px solid; 
+	BORDER-top: #abab63 1px solid; 
+	BORDER-bottom: #F6F6E5 1px solid;
+	CURSOR: hand; 
+	BACKGROUND-COLOR: #d6d69f;
+	}
+
+.nav {
+	float:left;
+	line-height:17pt;	
+	padding-left:4pt;
+	height:17pt;
+	}
+
+.menu label {
+	font-size:smaller;
+	color:#666;
+	line-height:100%;
+	white-space:nowrap
+	}
+
+	
+#menuDiv {
+  text-align: center;
+  width:100%;
+  background:#fff repeat-x bottom;
+  font-size:100%;
+  line-height:normal;
+  }
+#menuDiv #menuList ul {
+  margin:0;
+  padding:10px 10px 0;
+  list-style:none;
+  }
+#menuDiv #menuList li {
+  /*float:left;*/
+  background:url("../images/left.gif") no-repeat left top;
+  margin:0;
+  padding:5px 0 4px 9px;
+  *padding:0px 0 0px 9px;
+  display: inline;
+  }
+#menuDiv a {
+  /*float:left;*/
+  display:inline;
+  background:url("../images/right.gif") no-repeat right top;
+  padding:5px 15px 4px 6px;
+  text-decoration:none;
+  font-weight:bold;
+  color:#53585B;
+  }
+/* Commented Backslash Hack
+   hides rule from IE5-Mac \*/
+#menuDiv a {float:none;}
+/* End IE5-Mac hack */
+#menuDiv a:hover {
+  color:black;
+  }
+
+#menuDiv #menuList li.currentTab{
+  background-image:url("../images/left_on.gif");
+  }
+#menuDiv #menuList li.currentTab a{
+  background-image:url("../images/right_on.gif");
+  color:#333;
+  padding-bottom:5px;
+  }
+
+  #menuDivSec {
+  text-align: center;
+  width:100%;
+  background:#fff repeat-x bottom;
+  line-height:normal;
+  }
+#menuDivSec ul {
+  margin:0;
+  padding:10px 10px 0;
+  list-style:none;
+  }
+#menuDivSec li {
+  float:left;
+  background:url("../images/left_tan.gif") no-repeat left top;
+  margin:0;
+  padding:0 0 0 9px;
+  display: inline;
+  }
+#menuDivSec a {
+  float:left;
+  display:block;
+  background:url("../images/right_tan.gif") no-repeat right top;
+  padding:5px 15px 4px 6px;
+  text-decoration:none;
+  font-weight:normal;
+  font-family:sans;
+  color:#765;
+  }
+/* Commented Backslash Hack
+   hides rule from IE5-Mac \*/
+#menuDivSec a {float:none;}
+/* End IE5-Mac hack */
+#menuDivSec a:hover {
+  color:#333;
+  }
+#menuDivSec .currentTab {
+  background-image:url("../images/left_on.gif");
+  }
+#menuDivSec .currentTab a {
+  background-image:url("../images/right_on.gif");
+  color:#333;
+  padding-bottom:5px;
+  }
+
+.tabPane{
+	display:none;
+	margin-top:6px;
+}

@@ -1,0 +1,178 @@
+div.exportlinks {
+	padding: 2px 4px 2px 0px;
+	text-align:center;
+	font-size:8pt;
+}
+
+div.exportlinks a {
+	text-decoration: none;
+	border:none;
+}
+
+div.exportlinks span {
+	background-repeat: no-repeat;
+}
+
+span.csv {
+	background-image: url(../images/ico_file_csv.png);
+}
+
+span.excel {
+	background-image: url(../images/ico_file_excel.png);
+}
+
+span.pdf {
+	background-image: url(../images/ico_file_pdf.png);
+}
+
+span.xml {
+	background-image: url(../images/ico_file_xml.png);
+}
+
+span.export {
+	cursor: pointer;
+	display: inline;
+	display: inline-block;
+	padding: 0 4px 1px 20px;
+}
+
+span.pagebanner {
+	display: block;
+	font-size:7pt;
+	color:#666;
+	text-align:right;
+	padding-right:10px;
+}
+
+span.pagelinks {
+	display: block;
+	font-size: 1em;
+	text-align:right;
+	padding-right:10px;
+}
+
+table.list {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-BOTTOM: #ccc 1px solid; 
+	/*border: 1px solid #000000;*/
+	margin: 10px;
+	margin-top: 0px;
+	/* width: 100%; */
+}
+
+table.list td {
+	padding: 3px;
+}
+
+table.list th {
+	/*background: #C0C0C0;
+	color: #000000;
+	padding: 3px;
+	border-bottom: 1px solid #000000;
+	text-align: left;*/
+	
+	COLOR: white; PADDING-TOP: 2px; BACKGROUND-COLOR: #36c; padding-left:6px;padding-right:6px;
+}
+
+table.list caption {
+    background-color: #014691;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 2pt;
+    text-align: left;
+    color: white;
+}
+
+table.list th a, table.list th a:visited {
+	background-color: transparent;
+	/*color: #000000;*/
+	color: white;
+	text-decoration: none;
+}
+
+table.list th a:hover {
+	background-color: transparent;
+	COLOR: #ff9; BORDER-BOTTOM: #ff9 1px solid
+	/*color: #008000 !important;
+	text-decoration: overline underline;*/
+}
+
+th.sorted a, th.sortable a {
+	background-position: right;
+	display: block;
+}
+
+table.list th.order1 a {
+	background-image: url(../images/arrow_down.png) !important;
+}
+
+table.list th.order2 a {
+	background-image: url(../images/arrow_up.png) !important;
+}
+
+table.list th.sortable a {
+	background-image: url(../images/arrow_off.png);
+}
+
+table.list th.sorted {
+	background-color: #006;
+	color: #339;
+}
+
+table.list th.sorted, table.list th.sortable {
+	/*font-size:75%;*/
+	white-space:nowrap;
+}
+
+table.list th.sorted a, table.list th.sortable a {
+	background-position: right;
+	background-repeat: no-repeat;
+	display: block;
+	padding-right:10px;
+	border:none;
+}
+
+/* table.list th.sortable:hover {
+	background: #FFFF40;
+	color: #008000;
+} */
+
+table.list thead tr {
+	background-color: #FFCC00;
+}
+
+table.list tr.even {
+	/*background: #EEEEEE;*/
+	background: #e8f3ff;
+	border-top: 1px solid #C0C0C0;
+	color: #000000;
+}
+
+table.list tr.odd {
+	background: #FFFFFF;
+	border-top: 1px solid #C0C0C0;
+	color: #000000;
+}
+
+table.list tr.total {
+	background-color:#003399;
+	border-top: 1px solid #C0C0C0;
+	color:white;
+	border-color:#3366CC #002266 rgb(0, 34, 102) rgb(51, 102, 204);
+}
+/* highlight table row onmouseover */
+table.list tr.over {
+	border-bottom: 1px solid #C0C0C0;
+	border-top: 1px solid #C0C0C0;
+	color: #000000;
+	cursor: pointer;
+	cursor: hand; /* IE 5.5 non-compliant workaround */
+}
+
+/* override width for user list */
+table.userList {
+	width: 80% !important;
+}
+
+table.activeUserList, body#activeUsers span.pagelinks {
+    width: 450px !important;
+}

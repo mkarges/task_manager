@@ -1,0 +1,122 @@
+@charset "utf-8";
+#top_menu{
+	BACKGROUND-COLOR: #f0f0d0;
+	border-left: 1px solid #03c;
+	border-right: 1px solid #03c;
+	overflow:hidden;
+}			
+#top_row{
+	BORDER-top: #ffffe9 1px solid;
+	BORDER-bottom: #d3d3b7 1px solid;
+	height:18pt;
+}
+#top_nav{
+	line-height:17pt;	
+	padding-left:4pt;
+	height:17pt;
+}
+#nav {  
+	BACKGROUND-COLOR: #f0f0d0;
+	border-left: 1px solid #03c;
+	border-right: 1px solid #03c;
+	margin: 0; padding: 0;
+	line-height:17pt;
+	width: 100%;
+	font-size: 8pt;
+}
+.nav_li { 
+	float: left; 
+	display: inline;
+	  	list-style-type: none;
+	border-color:#FFFFE9 #D3D3B7 #D3D3B7 #FFFFE9;
+	border-style:solid;
+	border-width:1px;
+	padding: 0;
+}
+a.nav_a { 
+	display: block; 
+	width: 110px; 
+	text-align: left; 
+	text-decoration: none;
+	font-weight:normal;
+	margin: 0;
+	padding-left: 10px;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 0;
+	font-size: 10pt;
+}
+#index #nav_index, #prod #nav_prod, #area #nav_area, #envi #nav_envi, #service #nav_service, #cons #nav_cons, #clean #nav_clean, #corp #nav_corp,
+a.nav_a:hover { 
+	text-decoration: none;
+	color: #B8D2FF;
+	margin: 0;
+	padding-left: 10px;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 0;
+}
+		
+.nav_sub { 
+	position:absolute;  
+	width: 120px;
+	margin: 0;
+	BACKGROUND-COLOR: #f0f0d0;
+	border-top: 0; 
+	padding: 0;
+	text-align: left; 
+	z-index: 100;
+}
+.nav_sub li { 
+	margin: 0px 0;
+	padding: 5px 0 0 0;
+	CURSOR: hand; 
+	font-size: 9pt;
+}
+.disabled_link{ 
+	display:block;
+	background-color:#F3F3F3;
+	border:1px solid #DDDDDD;
+	color:#666666; 
+	padding-left: 10px;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 0;
+	margin: 0;
+	text-decoration: none;
+	font-weight:normal;
+}
+.nav_sub li a { 
+	display:block; 
+	padding-left: 10px;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 0;
+	margin: 0;
+	border-color:#FFFFE9 #D3D3B7 #D3D3B7 #FFFFE9;
+	border-style:solid;
+	border-width:1px;
+	text-decoration: none;
+	font-weight:normal;
+}
+* html .nav_sub li a {  
+	text-decoration: none;
+	margin: 0;
+}
+.nav_sub li a:hover { 
+	text-decoration: none; 
+	color: #B8D2FF;
+	margin: 0;
+	padding-left: 10px;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 0;
+	border-color:#FFFFE9 #D3D3B7 #D3D3B7 #FFFFE9;
+	border-style:solid;
+	border-width:1px;
+}
+				
+			
+#nav_top { float: right; color: #b8f5f0; }
+	#nav_top a { margin: 0 10px; }
+	

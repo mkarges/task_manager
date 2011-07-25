@@ -3,46 +3,10 @@
 	<div class="right"><%= link_to image_tag('add_sm.jpg', :border => 0), new_task_path, :remote => true %>&nbsp;<span class="add">Add</span></div>
 	<br /><br /><br />
 	<table class="tableWidth">
-	<% if !current_user.admin? %>
-	  <tr>
-		<th width="5%">Done</th>
-	    <th width="13%"><%= sortable "due_date", "Due Date" %></th>
-	    <th width="35%"><%= sortable "subject" %></th>
-		<% if current_user.admin? %>
-	    	<th width="20%"><%= sortable "assigned_to", "Assigned To" %></th>
-		<% end %>
-	    <th width="10%"><%= sortable "priority" %></th>
-	    <th width="5%"></th>
-	    <th width="5%"></th>
-	  </tr>
-	<% else %>
-	  <tr>
-		<th width="5%">Done</th>
-	    <th width="20%"><%= sortable "due_date", "Due Date" %></th>
-	    <th width="30%"><%= sortable "subject" %></th>
-		<% if current_user.admin? %>
-	    	<th width="20%"><%= sortable "assigned_to", "Assigned To" %></th>
-		<% end %>
-	    <th width="8%"><%= sortable "priority" %></th>
-	    <th width="7%"></th>
-	    <th width="7%"></th>
-	  </tr>	
-	<% end %>
+		
+	<%= render :partial => 'shared/table_header' %>
 	
-		<% @tasks.each do |task| %>
-			<% unless task.completed? %>
-				  <tr class="row">
-					<td class="submittable"><%= check_box_tag 'completed', :class => 'submittable' %></td>
-				    <td><%= englishify(task.due_date) %></td>
-				    <td><%= task.subject %></td>
-					<% if current_user.admin? %>				
-				    	<td><%= personalize(task.assign_to) %></td>
-					<% end %>
-				    <td><%= color_code(task.priority) %></td>
-				    <td><%= link_to 'Show', task, :remote => true %></td>
-				    <td><%= link_to 'Delete', task, :confirm => 'Are you sure?', :method => :delete %></td>
-			      </tr>
-			<% end %>
-		<% end %>
+	<%= render :partial => 'shared/filtered' %>
+	
 	</table>
 </div>

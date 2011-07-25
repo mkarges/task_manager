@@ -1,0 +1,21 @@
+.toolTip, .toolTipLong {
+	font-size:80%;
+	border:solid 1px #666666;
+    padding:1px; 
+	position:absolute; 
+	z-index:100; 
+	visibility:hidden; 
+	top:20px; 
+	left:90px; 
+	color:#333333;
+    background-color:#ffffcc; 
+	layer-background-color:#ffffcc;
+	}
+	  
+.toolTip {
+	white-space:nowrap
+	}	  
+
+.toolTipLong {
+	width:200px;
+	}

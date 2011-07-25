@@ -2,23 +2,17 @@ class PatronsController < ApplicationController
   # GET /patrons
   # GET /patrons.xml
   def index
-    @patrons = Patron.all
+    @patron = Patron.all
+    render :layout => false
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @patrons }
-    end
   end
 
   # GET /patrons/1
   # GET /patrons/1.xml
   def show
     @patron = Patron.find(params[:id])
+    render :layout => false
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @patron }
-    end
   end
 
   # GET /patrons/new

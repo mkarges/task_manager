@@ -19,7 +19,7 @@
 		</div>
 	
 	    <%= f.label :type %><br />
-	    <%= f.select :type, options_for_select(["Email", "Phone", "Post", "Meeting", "Other"]) %><br /><br />
+	    <%= f.select :type, options_for_select(["Email", "Phone", "Regular Mail", "Meeting", "Other"]) %><br /><br />
 	  </div>
 	 
 	  <div class="right">
@@ -57,7 +57,9 @@
 		<br /><br />
 		  </div>
 		  <div class="right">
-		    <%= f.submit "Save" %>&nbsp;<%= f.submit "Save and New" %>
+		    <%= link_to "Delete", @task, :confirm => "Are you sure?", :method => :delete %>&nbsp;&nbsp; 
+			<%= f.submit "Save" %>&nbsp;
+			<%= f.submit "Save and New" %>
 		  </div>
 	</div>
 <% end %>

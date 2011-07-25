@@ -35,6 +35,10 @@
 
 }
 
+.show a	{
+	text-decoration: none;
+}
+
 
 #home {
 	position: absolute;
@@ -88,6 +92,10 @@ h3	{
 
 .right {
 	float: right;
+}
+
+.buttons	{
+	text-align: right;
 }
 
 .mid {

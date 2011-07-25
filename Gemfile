@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'sass'
 gem 'client_side_validations'
 gem 'kaminari'
+gem 'annotate-models'
 
 # Use unicorn as the web server
 # gem 'unicorn'
