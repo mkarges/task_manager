@@ -15,6 +15,12 @@ module ApplicationHelper
        "None"
      end
    end
+
+   def tasks_history
+     img = image_tag("check.jpg")
+     link_to img, { :history => true }
+   end
+
    
    def sortable(column, title=nil)
      title ||= column.titleize

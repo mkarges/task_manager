@@ -1,10 +1,14 @@
-<tr>
-   <th width="5%">Done</th>
-   <th width="6%"><%= sortable "priority", "" %></th>
-   <th width="20%"><%= sortable "due_date", "Due Date" %></th>
-   <th width="40%"><%= sortable "subject" %></th>
-   <th width="14%"><%= sortable "patron" %></th>
-   <% if current_user.admin? %>
-     <th width="20%"><%= sortable "assigned_to", "Assigned To" %></th>
-   <% end %>
-</tr>
+<% if @today.empty? %>
+  <em>No tasks are due today!</em>
+<% else %>
+	<tr>
+	   <th width="5%">Done</th>
+	   <th width="6%"><%= sortable "priority", image_tag("flag.jpg") %></th>
+	   <th width="20%"><%= sortable "due_date", "Due Date" %></th>
+	   <th width="40%"><%= sortable "subject" %></th>
+	   <th width="14%"><%= sortable "patron" %></th>
+	   <% if current_user.admin? %>
+	     <th width="20%"><%= sortable "assigned_to", "Assigned To" %></th>
+	   <% end %>
+	</tr>
+<% end %>

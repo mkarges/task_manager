@@ -5,7 +5,7 @@
 		<%= link_to "My Tasks", tasks_path %>
 	<% end %>
 </div>
-<div class="right"><%= link_to image_tag('add_sm.jpg', :border => 0), new_task_path, :remote => true %>&nbsp;<span class="add">Add &nbsp;&nbsp;&nbsp;&nbsp;</span><%= link_to image_tag('check.jpg', :border => 0), tasks_path, :value => "1" %>&nbsp;<span class="add">View History</span></div>
+<div class="right"><%= link_to image_tag('add_sm.jpg', :border => 0), new_task_path, :remote => true %>&nbsp;<span class="add">Add &nbsp;&nbsp;&nbsp;&nbsp;</span><%= link_to image_tag('check.jpg', :border => 0), tasks_url, :value => "1" %>&nbsp;<span class="add">View History</span></div>
 <br /><br /><br />
 	<table class="tableWidth">
 		<%= render :partial => 'shared/table_header' %>

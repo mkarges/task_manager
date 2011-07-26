@@ -15,7 +15,10 @@
 	  <div class="left">
 		<div class="valiDate">		
 		    <%= f.label :due_date %><br />
-		    <%= f.date_select :due_date %><br /><br />
+			<%= f.date_select :due_date %>
+
+
+			<br /><br />
 		</div>
 	
 	    <%= f.label :type %><br />
@@ -57,7 +60,12 @@
 		<br /><br />
 		  </div>
 		  <div class="right">
+			
+		  <!-- do not display delete link for new task -->	
+		  <% unless @task.id.nil? %>
 		    <span class="red"><%= link_to "Delete", @task, :confirm => "Are you sure?", :method => :delete, :class => "red" %></span>&nbsp;&nbsp; 
+		  <% end %>
+		
 			<%= f.submit "Save" %>&nbsp;
 			<%= f.submit "Save and New" %>
 		  </div>

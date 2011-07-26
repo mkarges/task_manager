@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   before_filter :fix_assign_to_current_user, :only => [ :new, :edit ]
   
   def index
+    req = Rack::Request.new(env)
     if !Task.column_names.include?(params[:filter])    
       @today = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date <= ?", Date.today).order("due_date asc")
       @next  = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date > ?", Date.today).order("due_date desc")

@@ -27,5 +27,6 @@ class Task < ActiveRecord::Base
   def admin?
     self.admin == true
   end
+
   
 end
