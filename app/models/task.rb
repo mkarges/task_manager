@@ -22,7 +22,7 @@ class Task < ActiveRecord::Base
   
   paginates_per 5
   
-  validates_presence_of :subject
+  # validates_presence_of :subject
   
   def admin?
     self.admin == true
