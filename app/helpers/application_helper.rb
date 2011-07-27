@@ -81,6 +81,17 @@ module ApplicationHelper
        val
      end
    end
+   
+   def next_task(task)
+     nex = Task.where("id > ?", task.id).order("id asc").limit(1)
+     @forward = Task.find_by_id(nex)
+     link_to "Next", task_path(@forward), :remote => true       
+   end
 
+   def previous_task(task)
+     prev = Task.where("id < ?", task.id).order("id desc").limit(1)
+     @previous = Task.find_by_id(prev)
+     link_to "Previous", task_path(@previous), :remote => true       
+   end
 
 end

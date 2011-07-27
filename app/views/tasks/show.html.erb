@@ -41,6 +41,6 @@
 	  <% end %>
 </div>
 <div class="right">
-<%= link_to "Previous", task_path, :remote => true %> | <%= link_to "Next", task_path, :remote => true %>
+<%= previous_task(@task) %> | <%= next_task(@task) %>
 </div>
 
