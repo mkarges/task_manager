@@ -83,13 +83,21 @@ module ApplicationHelper
    end
    
    def next_task(task)
-     nex = Task.where("id > ?", task.id).order("id asc").limit(1)
+     if current_user.admin?
+       nex = Task.where("id > ?", task.id).order("id asc").limit(1)
+     else
+       nex = Task.where("id > ?", task.id).where("assign_to = ?", current_user.email).order("id asc").limit(1)
+     end
      @forward = Task.find_by_id(nex)
      link_to "Next", task_path(@forward), :remote => true       
    end
 
    def previous_task(task)
-     prev = Task.where("id < ?", task.id).order("id desc").limit(1)
+     if current_user.admin?
+       prev = Task.where("id < ?", task.id).order("id desc").limit(1)
+     else
+       prev = Task.where("id < ?", task.id).where("assign_to = ?", current_user.email).order("id desc").limit(1)
+     end
      @previous = Task.find_by_id(prev)
      link_to "Previous", task_path(@previous), :remote => true       
    end
