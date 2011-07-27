@@ -27,6 +27,15 @@ class Task < ActiveRecord::Base
   def admin?
     self.admin == true
   end
+  
+  def set_date
+    due_date.to_s
+  end
+ 
+  def set_date=(string)
+    self.due_date = Chronic.parse(string)
+  end
+  
 
   
 end

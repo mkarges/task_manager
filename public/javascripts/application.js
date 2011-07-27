@@ -22,7 +22,7 @@ $(document).ready(function() {
        .css('top', $(window).scrollTop() + 40)
        .show();
      $modal_container.show();
-     $('.task_due_date').datepicker({ dateFormat: 'mm-dd-yy' });
+     $('#task_set_date').datepicker();
    });
    // Hide close button click
    $('.close', '#modal').live('click', function(){
@@ -32,6 +32,7 @@ $(document).ready(function() {
    });
  });
  
+
 
 
 	$('.submittable').click(function() {

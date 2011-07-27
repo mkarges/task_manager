@@ -32,6 +32,7 @@ GEM
     arel (2.0.10)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
+    chronic (0.3.0)
     client_side_validations (3.1.0)
     devise (1.4.2)
       bcrypt-ruby (~> 2.1.2)
@@ -86,6 +87,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate-models
+  chronic
   client_side_validations
   devise
   jquery-rails

@@ -4,12 +4,12 @@
 
 	  <tr>
 		<th width="5%">Done</th>
-		<th width="6%"><%= sortable "priority", image_tag("flag.jpg") %></th>
-	    <th width="20%"><%= sortable "due_date", "Due Date" %></th>
-	    <th width="40%"><%= sortable "subject" %></th>
-		<th width="14%"><%= sortable "patron" %></th>
+		<th width="6%"><%= image_tag("flag.jpg") %></th>
+	    <th width="20%">Due Date</th>
+	    <th width="40%">Subject</th>
+		<th width="14%">Patron</th>
 		<% if current_user.admin? %>
-	      <th width="20%"><%= sortable "assigned_to", "Assigned To" %></th>
+	      <th width="20%">Assigned To</th>
 		<% end %>
 	  </tr>	
 	

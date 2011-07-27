@@ -6,7 +6,7 @@ class TasksController < ApplicationController
     req = Rack::Request.new(env)
     if !Task.column_names.include?(params[:filter])    
       @today = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date <= ?", Date.today).order("due_date asc")
-      @next  = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date > ?", Date.today).order("due_date desc")
+      @next  = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date > ?", Date.today).order("due_date asc")
     else
       @tasks = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).order(sort_column + " " + sort_direction)
     end

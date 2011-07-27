@@ -13,12 +13,10 @@
 	
 	<div id="form">
 	  <div class="left">
-		<div class="valiDate">		
-		    <%= f.label :due_date %><br />
-			<%= f.date_select :due_date %>
+	    <%= f.label :due_date %><br />
+		<%= f.text_field :set_date %>
 
-			<br /><br />
-		</div>
+		<br /><br />
 	
 	    <%= f.label :type %><br />
 	    <%= f.select :type, options_for_select(["Email", "Phone", "Regular Mail", "Meeting", "Other"]) %><br /><br />
