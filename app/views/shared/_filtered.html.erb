@@ -1,15 +1,25 @@
-<% @tasks.each do |task| %>
-<tr class="row">
-  <td class="submittable"><%= check_box_tag 'completed', :class => 'submittable' %></td>
-  <td><%= color_code(task.priority) %></td>
-
-  <td><%= englishify(task.due_date) %></td>
-  <td><span class="show"><%= link_to (task.subject), task, :remote => true %></span></td>
-  <td><span class="show"><%= link_to find_patron(task.patron_id), @patron %></span></td>
-  <% if current_user.admin? %>				
-  	<td><%= personalize(task.assign_to) %></td>
-  <% end %>
-</tr>
+<% if @completed %>
+	<% @tasks = @completed %>
 <% end %>
-<br />
+
+	<% @tasks.each do |task| %>
+	<tr class="row">
+	  <td class="submittable">
+		<% if !task.completed? %>			
+	      <%= check_box_tag 'completed', :class => 'submittable' %>
+		<% else %>
+		  <%= image_tag('check.jpg') %>
+		<% end %>
+	  </td>
+	  <td><%= color_code(task.priority) %></td>
+
+	  <td><%= englishify(task.due_date) %></td>
+	  <td><span class="show"><%= link_to (task.subject), task, :remote => true %></span></td>
+	  <td><span class="show"><%= link_to find_patron(task.patron_id), @patron %></span></td>
+	  <% if current_user.admin? %>				
+	  	<td><%= personalize(task.assign_to) %></td>
+	  <% end %>
+	</tr>
+	<% end %>
+	<br />
 

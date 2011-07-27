@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     @tasks = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).order(sort_column + " " + sort_direction).limit(5)
   end
   
+
   private
     
     def sort_column

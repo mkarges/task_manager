@@ -8,6 +8,8 @@ Activity::Application.routes.draw do
   
   resources :admin
   
+  resources :completed
+  
   devise_for :users
 
   root :to => "pages#index"
