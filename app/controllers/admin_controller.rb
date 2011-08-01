@@ -28,7 +28,7 @@ class AdminController < ApplicationController
   end
 
   def new
-    @task = Task.new(:priority => 'Medium', :assign_to => current_user)
+    @task = Task.new(:priority => 'Medium', :assign_to => current_user.first_name)
     @header = "New Task"
   end
 

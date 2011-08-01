@@ -2,7 +2,11 @@ class CompletedController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @completed = Task.where(:completed => true)   
+    if current_user.admin?
+      @completed = Task.where(:completed => true)   
+    else
+      @completed = Task.where(:completed => true).where('assign_to = ?', current_user.first_name)
+    end
   end
   
   private 
