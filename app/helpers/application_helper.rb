@@ -67,7 +67,7 @@ module ApplicationHelper
    end
    
    def personalize(email)
-     if email == current_user.email
+     if email == current_user.first_name
        "Me"
      else
        val = email.match(/.+/)

@@ -41,8 +41,13 @@ class PatronsController < ApplicationController
   # POST /patrons.xml
   def create
     @patron = Patron.new(params[:patron])
+    if @patron.save
 
+        redirect_to new_patron_path
 
+    else
+      render 'tasks_path'
+    end
   end
 
   # PUT /patrons/1
@@ -83,3 +88,9 @@ class PatronsController < ApplicationController
     %w[ asc desc ].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110717225943
+# Schema version: 20110801184821
 #
 # Table name: patrons
 #
@@ -14,6 +14,7 @@
 #  phone      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  group      :boolean
 #
 
 class Patron < ActiveRecord::Base

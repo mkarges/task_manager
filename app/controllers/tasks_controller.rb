@@ -5,10 +5,10 @@ class TasksController < ApplicationController
   
   def index
     if !Task.column_names.include?(params[:filter]) 
-      @today = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).order("due_date asc")
+      @today = Task.where("completed = ?", false).where("assign_to = ?", current_user.first_name).order("due_date asc")
       # @next  = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date > ?", Date.today).order("due_date asc")
     else
-      @tasks = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).order(sort_column + " " + sort_direction)
+      @tasks = Task.where("completed = ?", false).where("assign_to = ?", current_user.first_name).order(sort_column + " " + sort_direction)
     end
 
     respond_to do |format|
@@ -35,11 +35,9 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(params[:task])
     if @task.save
-      if @task.patron_id == @group_id
-        redirect_to patrons_path
-      else
-        redirect_to tasks_path
-      end
+
+        redirect_to :back
+
     else
       render 'new', :remote => true
     end
