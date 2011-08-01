@@ -1,0 +1,14 @@
+<div class="right">
+	<%= link_to image_tag('add_sm.jpg', :border => 0), new_task_path, :remote => true %>&nbsp;
+	<span class="add">
+		<%= link_to "Add", new_task_path, :remote => true %> &nbsp;&nbsp;&nbsp;&nbsp;
+	</span>
+		<%= link_to image_tag('check.jpg', :border => 0), :controller => 'completed', :action => 'index', :value => "1" %>&nbsp;
+	<span class="add">
+		<%= link_to "Completed", :controller => 'completed', :action => 'index' %>[<%= completed_tasks %>]&nbsp;&nbsp;&nbsp;
+	</span>
+		<%= link_to image_tag('x.jpg', :border => 0), tasks_path %>
+	<span class="add">
+		<%= link_to "Cancelled", :controller => 'cancelled', :action => 'index' %>[5]
+	</span>
+</div>

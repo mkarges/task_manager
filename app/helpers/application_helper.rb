@@ -75,6 +75,11 @@ module ApplicationHelper
      end
    end
    
+   def completed_tasks
+     num = Task.where('completed = ?', true)
+     num.count
+   end
+   
    def next_task(task)
      if current_user.admin?
        nex = Task.where("id > ?", task.id).order("id asc").limit(1)

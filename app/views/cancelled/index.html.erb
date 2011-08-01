@@ -7,17 +7,7 @@
 </div>
 
 <%= render :partial => 'shared/sort_header' %>
+<br /><br /><br /><br />
+<span style="color: green"><strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= flash[:notice] %></strong></em></span> ... <%= link_to "Back", :back %>
 
-	<br /><br /><br />
-	<table class="tableWidth">
-		
-		<%= render :partial => 'shared/table_header' %>
-
-		<% if @tasks.nil? %>
-			<%= render :partial => 'shared/due_next' %>
-		<% else %>
-			<%= render :partial => 'shared/filtered' %>
-		<% end %>
-	</table>		
-</div>
 
