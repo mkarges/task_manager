@@ -1,10 +1,18 @@
 <% @today.each do |task| %>
-	<tr class="row">
+	<% if task.due_date <= Date.today %>
+	  <tr class="rowBold">
+	<% else %>
+	  <tr class="row">
+	<% end %>	
 	  <td class="submittable"><%= check_box_tag 'completed', :class => 'submittable' %></td>
 	  <td><%= color_code(task.priority) %></td>
 	  <td><%= englishify(task.due_date) %></td>
 	  <td><span class="show"><%= link_to (task.subject), task, :remote => true %></span></td>	
-	  <td><span class="show"><%= link_to find_patron(task.patron_id), @patron %></span></td>
+	  <td><span class="show">	<% if @group_id == task.patron_id %> 
+									<%= find_patron(task.patron_id) %>
+								 <% else %>
+									<%= link_to find_patron(task.patron_id), @patron %></span></td>
+								 <% end %>
 	  <% if current_user.admin? %>				
 	  	<td><%= personalize(task.assign_to) %></td>
 	  <% end %>

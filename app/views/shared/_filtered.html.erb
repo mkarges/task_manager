@@ -3,23 +3,31 @@
 <% end %>
 
 	<% @tasks.each do |task| %>
-	<tr class="row">
-	  <td class="submittable">
-		<% if !task.completed? %>			
-	      <%= check_box_tag 'completed', :class => 'submittable' %>
+		<% if task.due_date <= Date.today && !task.completed? %>
+		  <tr class="rowBold">
 		<% else %>
-		  <%= image_tag('check.jpg') %>
+		  <tr class="row">
 		<% end %>
-	  </td>
-	  <td><%= color_code(task.priority) %></td>
+		  <td class="submittable">
+			<% if !task.completed? %>			
+		      <%= check_box_tag 'completed', :class => 'submittable' %>
+			<% else %>
+			  <%= check_box_tag('completed', 1, true )%>
+			<% end %>
+		  </td>
+		  <td><%= color_code(task.priority) %></td>
 
-	  <td><%= englishify(task.due_date) %></td>
-	  <td><span class="show"><%= link_to (task.subject), task, :remote => true %></span></td>
-	  <td><span class="show"><%= link_to find_patron(task.patron_id), @patron %></span></td>
-	  <% if current_user.admin? %>				
-	  	<td><%= personalize(task.assign_to) %></td>
-	  <% end %>
-	</tr>
+		  <td><%= englishify(task.due_date) %></td>
+		  <td><span class="show"><%= link_to (task.subject), task, :remote => true %></span></td>
+		  <td><span class="show"><% if @group_id == task.patron_id %> 
+									<%= find_patron(task.patron_id) %>
+								 <% else %>
+									<%= link_to find_patron(task.patron_id), @patron %></span></td>
+								 <% end %>
+		  <% if current_user.admin? %>				
+		  	<td><%= personalize(task.assign_to) %></td>
+		  <% end %>
+		</tr>
 	<% end %>
 	<br />
 

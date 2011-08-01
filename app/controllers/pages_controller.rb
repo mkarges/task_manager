@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   helper_method :sort_column, :sort_direction
+  before_filter :get_group_id
 
   def index
     @tasks = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).order(sort_column + " " + sort_direction).limit(5)
@@ -15,6 +16,9 @@ class PagesController < ApplicationController
     def sort_direction
       %w[ asc desc ].include?(params[:direction]) ? params[:direction] : "asc"
     end
-  
+    
+    def get_group_id
+      @group_id = Patron.find_by_email("group@thegroup.net").id      
+    end
 
 end

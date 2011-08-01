@@ -100,14 +100,18 @@ h3	{
 	float: right;
 }
 
+.search	{
+	
+	float:right;
+	padding-right: 50px;
+}
 .buttons	{
 	text-align: right;
 }
 
 .mid {
 	text-align: center;
-	padding-left: 10px;
-	padding-right: 10px;
+	
 }
 
 .red a	{
@@ -115,3 +119,17 @@ h3	{
 	text-decoration: none;
 }
 
+.rowBold	{
+	font-weight: bold;
+	/* background-color: pink; */
+}
+
+#vertScroll	{
+	position: absolute;
+	right: 10px;
+	top: 50px;
+}
+
+.groupLink	{
+	visibility: hidden;
+}

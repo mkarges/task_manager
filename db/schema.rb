@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713225843) do
+ActiveRecord::Schema.define(:version => 20110731051915) do
 
   create_table "patrons", :force => true do |t|
     t.string   "first_name"
@@ -23,18 +23,19 @@ ActiveRecord::Schema.define(:version => 20110713225843) do
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "group"
   end
 
   create_table "tasks", :force => true do |t|
     t.date     "due_date"
-    t.integer  "priority"
+    t.string   "comm"
+    t.boolean  "priority"
     t.string   "subject"
     t.string   "description"
     t.boolean  "completed"
     t.string   "assign_to"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "type"
     t.integer  "patron_id"
   end
 

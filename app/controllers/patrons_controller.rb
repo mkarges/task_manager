@@ -4,9 +4,7 @@ class PatronsController < ApplicationController
   # GET /patrons
   # GET /patrons.xml
   def index
-    @patron = Patron.all
-    render :layout => false
-
+    @patron = Patron.find(:all, :order => "last_name")
   end
 
   # GET /patrons/1
@@ -44,15 +42,7 @@ class PatronsController < ApplicationController
   def create
     @patron = Patron.new(params[:patron])
 
-    respond_to do |format|
-      if @patron.save
-        format.html { redirect_to(@patron, :notice => 'Patron was successfully created.') }
-        format.xml  { render :xml => @patron, :status => :created, :location => @patron }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @patron.errors, :status => :unprocessable_entity }
-      end
-    end
+
   end
 
   # PUT /patrons/1

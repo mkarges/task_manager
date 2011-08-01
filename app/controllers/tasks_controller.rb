@@ -1,11 +1,12 @@
 class TasksController < ApplicationController
   helper_method :sort_column, :sort_direction
   before_filter :fix_assign_to_current_user, :only => [ :new, :edit ]
+  before_filter :get_group_id
   
   def index
     if !Task.column_names.include?(params[:filter]) 
-      @today = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date <= ?", Date.today).order("due_date asc")
-      @next  = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date > ?", Date.today).order("due_date asc")
+      @today = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).order("due_date asc")
+      # @next  = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("due_date > ?", Date.today).order("due_date asc")
     else
       @tasks = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).order(sort_column + " " + sort_direction)
     end
@@ -23,7 +24,7 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new(:priority => 1)
+    @task = Task.new
     @header = "New Task"
   end
 
@@ -34,7 +35,11 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(params[:task])
     if @task.save
-      redirect_to tasks_path
+      if @task.patron_id == @group_id
+        redirect_to patrons_path
+      else
+        redirect_to tasks_path
+      end
     else
       render 'new', :remote => true
     end
@@ -72,6 +77,10 @@ class TasksController < ApplicationController
     
     def sort_direction
       %w[ asc desc ].include?(params[:direction]) ? params[:direction] : "asc"
+    end
+    
+    def get_group_id
+      @group_id = Patron.find_by_email("group@thegroup.net").id      
     end
   
 end

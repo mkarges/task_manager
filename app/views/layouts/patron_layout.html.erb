@@ -2,14 +2,19 @@
 <html>
 <head>
   <title>Activity</title>
-  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css", "modal_styles" %>
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css", "scaffold", "modal_styles" %>
   <%= javascript_include_tag "jquery", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.js", "application", "rails" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
+	
 
 <%= yield %>
+
+<div id="modal-container"></div>
+<div id="modal">
+
+  <div id="top"><a href="#" class="close">close</a></div>
 
 
 </html>

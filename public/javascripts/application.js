@@ -23,6 +23,13 @@ $(document).ready(function() {
        .show();
      $modal_container.show();
      $('#task_set_date').datepicker();
+     $('#selectPatron').change(function() 
+	   { 
+       if ($("#selectPatron option[value='2']").attr('selected')) {
+        //alert('Ciao monde');
+		 $(".groupLink").css( {visibility: "visible"} )
+       }
+     });
    });
    // Hide close button click
    $('.close', '#modal').live('click', function(){
@@ -32,13 +39,18 @@ $(document).ready(function() {
    });
  });
  
-
-
-
 	$('.submittable').click(function() {
 	  var parentElement = $(this).parent();
 	  $(parentElement).hide('slow');
 	});
+
+    $('#selectPatron').change(function() 
+	   { 
+       if ($("#selectPatron option[value='2']").attr('selected')) {
+        //alert('Ciao monde');
+		 $(".groupLink").css( {visibility: "visible"} )
+       }
+     });
 
 
 });

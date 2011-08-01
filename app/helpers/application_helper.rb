@@ -52,24 +52,17 @@ module ApplicationHelper
      end
    end
    
-   def color_code(priority)
-     if priority == 2
-       image_tag('green.jpg')
-     elsif priority == 1    
-       image_tag('yellow.jpg') 
-     else                   
-       image_tag('red.jpg') 
-    end                              
-                                     
+   def color_code(priority)       
+     if priority == true    
+       image_tag('redDot.jpg') 
+     end                                                                 
    end
    
    def priority_level(priority)
-     if priority == 0
+     if priority == true
        "High"
-     elsif priority == 1
-       "Medium"
      else
-       "Low"
+       "Normal"
      end
    end
    
