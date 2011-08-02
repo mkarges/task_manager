@@ -26,6 +26,8 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
     @header = "New Task"
+    @patron = get_patron
+    session[:patron] = nil
   end
 
   def edit
@@ -63,7 +65,7 @@ class TasksController < ApplicationController
   end
   
   private
-  
+
   
     def fix_assign_to_current_user
       @select_users = User.find(:all)

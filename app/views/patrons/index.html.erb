@@ -1,7 +1,7 @@
 <div id="vertScroll">
 	<%= image_tag('scroll.png') %>
 </div>
-<span class="left"><strong>[SUBJECT and DATE of task]</strong></span><span class="search"><%= image_tag('search.png') %></span><br /><br />
+<span class="left"><strong>Add Patrons to Task</strong></span><span class="search"><%= image_tag('search.png') %></span><br /><br />
 <br />
 <% @patron.each do |t| %>
 	<% unless t.last_name == "GROUP" %>

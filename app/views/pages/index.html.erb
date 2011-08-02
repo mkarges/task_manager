@@ -1,6 +1,9 @@
 <div id="home">
 	<div class="left"><%= link_to "Task Home", tasks_path %></div>
-	<div class="right"><%= link_to image_tag('add_sm.jpg', :border => 0), new_task_path, :remote => true %>&nbsp;<span class="add">Add</span></div>
+	<div class="right"><%= link_to image_tag('add_sm.jpg', :border => 0), new_task_path, :remote => true %>&nbsp;
+	<span class="add">
+		<%= link_to "Add", new_task_path, :remote => true %> &nbsp;&nbsp;&nbsp;&nbsp;
+	</span></div>
 	<br /><br /><br />
 	<table class="tableWidth">
 		

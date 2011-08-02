@@ -76,9 +76,18 @@ module ApplicationHelper
    end
    
    def completed_tasks
-     num = Task.where('completed = ?', true)
+     num = Task.where(:completed => true).where('assign_to = ?', current_user.first_name)
      num.count
    end
+   
+   def hold_patron(patron)
+     session[:patron] = patron.id
+   end
+
+   def get_patron
+     session[:patron] ||= "None"
+   end
+   
    
    def next_task(task)
      if current_user.admin?

@@ -12,7 +12,7 @@ class PatronsController < ApplicationController
   def show
     @patron = Patron.find(params[:id])
     if !current_user.admin?
-      @tasks = Task.where("completed = ?", false).where("assign_to = ?", current_user.email).where("patron_id = ?", @patron.id).order(sort_column + " " + sort_direction)
+      @tasks = Task.where("completed = ?", false).where("patron_id = ?", @patron.id).order(sort_column + " " + sort_direction)
     else
       @tasks = Task.where("completed = ?", false).where("patron_id = ?", @patron.id).order(sort_column + " " + sort_direction)
     end
@@ -79,6 +79,7 @@ class PatronsController < ApplicationController
   end
   
   private
+  
   
   def sort_column
     Task.column_names.include?(params[:filter]) ? params[:filter] : "due_date"

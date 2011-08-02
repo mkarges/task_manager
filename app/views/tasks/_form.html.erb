@@ -31,8 +31,13 @@
 		
 		
 		Patron<br />
-		<div id="selectPatron">			
-		    <%= f.collection_select :patron_id, Patron.find(:all), :id, :last_name, :prompt => "None" %> &nbsp;&nbsp;
+
+		<div id="selectPatron">
+			<% if @patron %>			
+		    	<%= f.collection_select :patron_id, Patron.find(:all), :id, :last_name, :selected => @patron %>&nbsp;&nbsp;
+			<% else %>
+				<%= f.collection_select :patron_id, Patron.find(:all), :id, :last_name, :prompt => "None" %> &nbsp;&nbsp;
+			<% end %>
 			<% if @task.patron_id == @group_id %>
 			 <%= link_to "Patron Group", patrons_path, :remote => true %>
 			<% end %>

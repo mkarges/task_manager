@@ -7715,8 +7715,10 @@ td.subSubHead a.disabledLink:hover, a.disabledLink:hover{
 			<% if @tasks.empty? %>
 				<em>&nbsp;No current tasks for this patron</em><br /><br />
 			<% else %>
+				<%= hold_patron(@patron) %>
 				<%= render :partial => 'shared/patron' %>
 			<% end %>
+			
 		
 		
 		
