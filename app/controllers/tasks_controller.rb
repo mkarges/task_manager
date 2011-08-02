@@ -24,7 +24,7 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    @task = Task.new(:due_date => Date.today)
     @header = "New Task"
     @patron = get_patron
     session[:patron] = nil
