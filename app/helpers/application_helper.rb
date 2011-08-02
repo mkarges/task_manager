@@ -6,15 +6,16 @@ module ApplicationHelper
      else
        "None"
      end
-   end
-   
-   def get_patron
-     if a = Patron.find_by_id(@task.patron_id)
+   end   
+
+   def show_patron(id)
+     if a = Patron.find_by_id(id)
        a.last_name
      else
        "None"
      end
    end
+
 
    def tasks_history
      img = image_tag("check.jpg")
@@ -93,7 +94,7 @@ module ApplicationHelper
      if current_user.admin?
        nex = Task.where("id > ?", task.id).order("id asc").limit(1)
      else
-       nex = Task.where("id > ?", task.id).where("assign_to = ?", current_user.email).order("id asc").limit(1)
+       nex = Task.where("id > ?", task.id).where("assign_to = ?", current_user.first_name).order("id asc").limit(1)
      end
      @forward = Task.find_by_id(nex)
      link_to "Next", task_path(@forward), :remote => true       
@@ -103,7 +104,7 @@ module ApplicationHelper
      if current_user.admin?
        prev = Task.where("id < ?", task.id).order("id desc").limit(1)
      else
-       prev = Task.where("id < ?", task.id).where("assign_to = ?", current_user.email).order("id desc").limit(1)
+       prev = Task.where("id < ?", task.id).where("assign_to = ?", current_user.first_name).order("id desc").limit(1)
      end
      @previous = Task.find_by_id(prev)
      link_to "Previous", task_path(@previous), :remote => true       

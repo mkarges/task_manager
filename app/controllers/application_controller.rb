@@ -8,5 +8,6 @@ class ApplicationController < ActionController::Base
   def get_patron
     session[:patron] ||= nil
   end
+
   
 end
