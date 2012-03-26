@@ -1,5 +1,3 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
 
 $(document).ready(function() {	
 	
@@ -8,8 +6,7 @@ $(document).ready(function() {
        $modal_close = $modal.find('.close'),
        $modal_container = $('#modal-container');
  
-   // This bit can be confusing. Since Rails.js sends an accept header asking for
-   // javascript, but we want it to return HTML, we need to override this instead.
+
    $('a[data-remote]').live('ajax:beforeSend', function(e, xhr, settings){
      xhr.setRequestHeader('accept', '*/*;q=0.5, text/html, ' + settings.accepts.html);
    });
@@ -26,7 +23,6 @@ $(document).ready(function() {
      $('#selectPatron').change(function() 
 	   { 
        if ($("#selectPatron option[value='2']").attr('selected')) {
-        //alert('Ciao monde');
 		 $(".groupLink").css( {visibility: "visible"} )
        }
      });
@@ -47,7 +43,6 @@ $(document).ready(function() {
     $('#selectPatron').change(function() 
 	   { 
        if ($("#selectPatron option[value='2']").attr('selected')) {
-        //alert('Ciao monde');
 		 $(".groupLink").css( {visibility: "visible"} )
        }
      });
